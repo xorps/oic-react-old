@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
+  "private": true,
   "scripts": {
-    "start": "electron ."
+    "build": "parcel build src/bundle.js --out-dir static",
+    "start": "babel src --out-dir dist && electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +19,20 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.1.3"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "electron": "^4.1.3",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "typeface-roboto": "0.0.54"
   }
 }
